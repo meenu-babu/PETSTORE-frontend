@@ -81,10 +81,10 @@ function updatePet() {
               throw new Error('Failed to update pet');
           }
           alert('Pet updated successfully');
-          return response.json(); // Optional: If your server returns updated pet data, you can handle it here
+          return response.json(); 
       })
       .then(data => {
-          console.log(`Updated pet data: ${JSON.stringify(data)}`); // Log updated pet data if available
+          console.log(`Updated pet data: ${JSON.stringify(data)}`); 
       })
       .catch(error => {
           console.error('Error updating pet:', error);
