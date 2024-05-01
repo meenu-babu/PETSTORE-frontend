@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Pet Store</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">Shop</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto my-8">
+        <section>
+            <div class="text-center bg-gray-300 shadow-md p-14 font-mono ">
+                <h2 class="text-3xl font-bold mb-4">Welcome to Our Pet Store</h2>
+                <p class="text-gray-600 italic">Bringing Joy to Every Tail: Your One-Stop Destination for Happy Pets</p>
+            </div>
+        </section>
+        <section class="grid gap-4 grid-cols-2 text-2xl font-semibold text-gray-300 " >
+            <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 shadow-2xl" onclick="showAddPetForm()">Add Pet</button>
+            <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 shadow-2xl" onclick="showUpdatePetForm()">Update Pet</button>
+            <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 mt-0 shadow-2xl" onclick="showDeletePetForm()">Delete Pet</button>
+            <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 mt-0 shadow-2xl" onclick="showViewPetForm()">View Pet</button>
+        </section>
+            <div id="addPetForm" style="display: none;">
+              <label for="petName">Pet Name:</label>
+              <input type="text" id="petName">
+              <label for="category">category:</label>
+              <input type="text" id="category">
+              <label for="status">Currently available/unavailable:</label>
+              <input type="text" id="status">
+
+              <button onclick="addPet()">Add Pet</button>
+            </div>
+          
+            <div id="updatePetForm" style="display: none;">
+              <label for="petIdToUpdate">Pet ID to Update:</label>
+              <input type="number" id="petIdToUpdate">
+              <label for="name">Updated Pet Name:</label>
+              <input type="text" id="name">
+              <label for="category">category:</label>
+              <input type="text" id="category">
+              <label for="status">Currently available/unavailable:</label>
+              <input type="text" id="status">
+              <button onclick="updatePet()">Update Pet</button>
+            </div>
+          
+            <div id="deletePetForm" style="display: none;">
+              <label for="id_delete">Pet ID to Delete:</label>
+              <input type="number" id="id_delete">
+              <button onclick="deletePet()">Delete Pet</button>
+            </div>
+          
+            <div id="viewPetForm" style="display: none;">
+              <label for="id_view">Pet ID to View:</label>
+              <input type="number" id="id_view">
+              <button onclick="viewPet()">View Pet</button>
+            </div>
+          
+            
+    </main>
+    <div id="petListContainer"></div>
+
+    <footer class="bg-gray-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Pet Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
