@@ -33,6 +33,7 @@
             <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 shadow-2xl" onclick="showUpdatePetForm()">Update Pet</button>
             <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 mt-0 shadow-2xl" onclick="showDeletePetForm()">Delete Pet</button>
             <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 mt-0 shadow-2xl" onclick="showViewPetForm()">View Pet</button>
+            <button class="bg-yellow-600 rounded-full py-3 px-6 m-8 w-4/5 h-16 mt-0 shadow-2xl" onclick="viewAllPets()">Get all pets</button>
         </section>
             <div id="addPetForm" style="display: none;">
               <label for="petName">Pet Name:</label>
@@ -48,12 +49,12 @@
             <div id="updatePetForm" style="display: none;">
               <label for="petIdToUpdate">Pet ID to Update:</label>
               <input type="number" id="petIdToUpdate">
-              <label for="name">Updated Pet Name:</label>
-              <input type="text" id="name">
-              <label for="category">category:</label>
-              <input type="text" id="category">
-              <label for="status">Currently available/unavailable:</label>
-              <input type="text" id="status">
+              <label for="up_name">Updated Pet Name:</label>
+              <input type="text" id="up_name">
+              <label for="up_category">category:</label>
+              <input type="text" id="up_category">
+              <label for="up_status">Currently available/unavailable:</label>
+              <input type="text" id="up_status">
               <button onclick="updatePet()">Update Pet</button>
             </div>
           
