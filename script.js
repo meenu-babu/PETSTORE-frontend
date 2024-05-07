@@ -58,15 +58,15 @@ function showAddPetForm() {
 
 function updatePet() {
   const petId = document.getElementById('petIdToUpdate').value;
-  const name = document.getElementById('name').value;
-  const category = document.getElementById('category').value;
-  const status = document.getElementById('status').value;
+  const up_name = document.getElementById('up_name').value;
+  const up_category = document.getElementById('up_category').value;
+  const up_status = document.getElementById('up_status').value;
 
   const petData = {
       id: petId,
-      name: name,
-      category: category,
-      status: status
+      name: up_name,
+      category: up_category,
+      status: up_status
   };
 
   fetch(`http://127.0.0.1:5000/pet/${petId}`, {
@@ -85,6 +85,9 @@ function updatePet() {
       })
       .then(data => {
           console.log(`Updated pet data: ${JSON.stringify(data)}`); 
+          console.log('Category:', up_category);
+          console.log('Status:', up_status);
+
       })
       .catch(error => {
           console.error('Error updating pet:', error);
@@ -136,4 +139,25 @@ function viewPet() {
       });
 }
 
-  
+function viewAllPets() {
+  fetch('http://127.0.0.1:5000/pet')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Failed to fetch pet data');
+          }
+          return response.json();
+      })
+      .then(data => {
+          const petListContainer = document.getElementById('petListContainer');
+          petListContainer.innerHTML = ''; // Clear previous content
+
+          data.pets.forEach(pet => {
+              const petInfo = document.createElement('div');
+              petInfo.textContent = `Pet ID: ${pet.id}, Name: ${pet.name}, Category: ${pet.category}, Status: ${pet.status}`;
+              petListContainer.appendChild(petInfo);
+          });
+      })
+      .catch(error => {
+          console.error('Error fetching pet data:', error);
+      });
+}
